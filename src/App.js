@@ -1,0 +1,1 @@
+// Root component of the application

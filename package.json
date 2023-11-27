@@ -1,0 +1,21 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A simple weather application",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "firebase": "^9.23.0",
+    "mobx": "^6.8.0",
+    "mobx-react-lite": "^3.4.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.8.1"
+  },
+  "engines": {
+    "npm": ">=10.2.0",
+    "node": ">=21.1.0"
+  }
+}
