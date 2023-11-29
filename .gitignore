@@ -131,4 +131,5 @@ dist
 
 
 # config files 
-.config/
+src/apiConfig.js
+src/firebaseConfig.js

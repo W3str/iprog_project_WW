@@ -1,6 +1,5 @@
-// Root component of the application
 import React from 'react';
-import HomeView from './views/HomeView';
+import HomeView from './views/homeView';
 
 function App() {
     return (

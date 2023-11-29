@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePresenter from '../presenters/HomePresenter';
+import HomePresenter from '../presenters/homePresenter';
 
 function HomeView() {
     return (

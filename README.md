@@ -1,15 +1,26 @@
 # iprog_project_WW
 
 
+## Frågor till onsdag
+- Hur ska jag komplettera 
+
+
+### 
+- Need a specific target group (meme-ish) - novelty 
+- Google inlogg 
+- Deploy 
+- Project review nästa vecka 
+- mvp enda krav 
+
 
 ## TODO: 
 - [ ] Throughout make changes in App.jsx and index.jsx to visually and functionally test the app
-- [ ] Make components
-    - [ ] SearchCard.jsx
-    - [ ] WeatherCard.jsx
+- [ ] Make components (in views)
+    - [ ] SearchCard 
+    - [ ] WeatherCard 
 - [ ] Make views
     - [ ] CityWeatherView.jsx
-    - [ ] HomeView.jsx
+    - [ ] HomeView.jsx 
 - [ ] Make presenters
     - [ ] CityWeatherPresenter.jsx
     - [ ] HomePresenter.jsx
