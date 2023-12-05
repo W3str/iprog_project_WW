@@ -2,7 +2,7 @@ import { API_KEY } from '../apiConfig';
 
 // Function to get coordinates from a city name
 export function coordsFromCity(city) {
-    const geocodingUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`;
+    const geocodingUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`;
     return fetch(geocodingUrl)
         .then(function(response) {
             return response.json();

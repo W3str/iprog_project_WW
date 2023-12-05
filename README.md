@@ -1,6 +1,9 @@
 # iprog_project_WW
 
 
+## Website: [Moist-Map](https://moist-map.web.app/)
+
+
 ## Frågor till onsdag
 - Hur ska jag komplettera 
 
@@ -25,7 +28,8 @@
     - [ ] CityWeatherPresenter.jsx
     - [ ] HomePresenter.jsx
 - [ ] Make the model
-- [ ] Connect the API
+- [x] Connect the API
+- [x] Deploy to firebase
 
 ### D Level Grading Criteria
 
