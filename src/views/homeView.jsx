@@ -1,10 +1,10 @@
 import React from 'react';
-import HomePresenter from '../presenters/homePresenter';
+import HomePresenter from '../presenters/homePresenter'; 
 
 function HomeView() {
     return (
         <div className="HomeView">
-        <HomePresenter />
+            <HomePresenter />
         </div>
     );
 }

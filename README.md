@@ -17,7 +17,13 @@
 
 
 ## TODO: 
-- [ ] Throughout make changes in App.jsx and index.jsx to visually and functionally test the app
+
+- [x] Connect the API
+- [x] Deploy to firebase
+- [x] Google login 
+- [ ] State management (users pinned cities)
+- [ ] Finish model
+
 - [ ] Make components (in views)
     - [ ] SearchCard 
     - [ ] WeatherCard 
@@ -27,9 +33,8 @@
 - [ ] Make presenters
     - [ ] CityWeatherPresenter.jsx
     - [ ] HomePresenter.jsx
-- [ ] Make the model
-- [x] Connect the API
-- [x] Deploy to firebase
+- [ ] Make css 
+
 
 ### D Level Grading Criteria
 
