@@ -21,7 +21,7 @@
 - [x] Connect the API
 - [x] Deploy to firebase
 - [x] Google login 
-- [ ] State management (users pinned cities)
+- [x] State management (users pinned cities)
 - [ ] Finish model
 
 - [ ] Make components (in views)

@@ -2,34 +2,40 @@
 import React, { useEffect, useState } from 'react';
 import { weatherFromCity } from '../api/weatherAPI';
 import { signInWithGoogle, monitorAuthState } from '../model/firebaseModel'; 
-
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../userState';
+import HomeView from '../views/homeView';
+import { useNavigate } from 'react-router-dom';
 function HomePresenter() {
     const [weatherData, setWeatherData] = useState({});
-    const [isSignedIn, setIsSignedIn] = useState(false);
+    const dispatch = useDispatch()
+    const navigate = useNavigate();
+
+    const pinnedCities = useSelector(state => state.user.details.pinnedCities);
+    const isSignedIn = useSelector(state => state.user.isLoggedIn);
 
     function handleSignIn() {
         signInWithGoogle()
             .then(function(result) {
-                // Handle signed-in user information
+                console.log(result)
+                dispatch(loginUser(result))
+                window.location.reload();
             })
             .catch(function(error) {
                 console.error(error);
             });
     }
-
-    function handleAuthStateChange(user) {
-        setIsSignedIn(!!user);
+    function navigateToPinCity() {
+        navigate('/addcities')
     }
 
     useEffect(function() {
-        const unsubscribe = monitorAuthState(handleAuthStateChange);
-        return function cleanup() {
-            unsubscribe();
-        };
-    }, []);
-
-    useEffect(function() {
-        const cities = ['London', 'Stockholm', 'Beirut'];
+        let cities = [];
+        if (!isSignedIn){
+        cities = ['London', 'Stockholm', 'Beirut'];
+        }else{
+            cities = pinnedCities
+        }
         function handleWeatherData(data) {
             const formattedData = data.reduce(function(acc, current, index) {
                 acc[cities[index]] = current;
@@ -48,21 +54,7 @@ function HomePresenter() {
     }, []);
 
     return (
-        <div className="HomePresenter">
-            <h1>Moist Map</h1>
-            {isSignedIn ? (
-                <div>Welcome, user!</div>
-            ) : (
-                <button onClick={handleSignIn}>Sign In with Google</button>
-            )}
-            <div className="searchResults">
-                {Object.entries(weatherData).map(function([city, data]) {
-                    return (
-                        <p key={city}>{`${city}: ${data.main.temp}°C, ${data.weather[0].main}`}</p>
-                    );
-                })}
-            </div>
-        </div>
+        <HomeView navigateToPinCity={navigateToPinCity} weatherData={weatherData} handleSignIn={handleSignIn} isSignedIn={isSignedIn}/>
     );
 }
 

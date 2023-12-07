@@ -1,11 +1,26 @@
 import React from 'react';
-import HomeView from './views/homeView';
+import { store, persistor } from './store';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePresenter from './presenters/homePresenter';
+import AddCityPresenter from './presenters/addCitiesPresenter';
 
 function App() {
     return (
-        <div className="App">
-        <HomeView />
-        </div>
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+                <BrowserRouter>
+                    <div className="App">
+                        <Routes>
+                            <Route path="/" element={<HomePresenter />} />
+                            <Route path="/addCities" element={<AddCityPresenter />} />
+
+                        </Routes>
+                    </div>
+                </BrowserRouter>
+            </PersistGate>
+        </Provider>
     );
 }
 
