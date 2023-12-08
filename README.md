@@ -1,63 +1,38 @@
-# iprog_project_WW
 
+### Short Description of Your Project
 
-## Website: [Moist-Map](https://moist-map.web.app/)
+The project is supposed to be a simple and fun weather app for younger audiences. You should be able to search for any city and pin your favourites to the home page if you are logged in. In addition, the app should show a relevant meme based on the current weather in the city you searched for.
 
+### What Have You Done
 
-## Frågor till onsdag
-- Hur ska jag komplettera 
+We have implemented the simplest two-page website where the main page has a login option and where you can see your pinned cities. This also has the option to pin cities which takes you to the second page. This one has a search bar which makes the call to our chosen API and where you have the option to add or go back to the main page. If you add a city, it will be shown on the main page (and stored on Firebase, linked to your Google account).
 
+### What You Still Plan to Do
 
-### 
-- Need a specific target group (meme-ish) - novelty 
-- Google inlogg 
-- Deploy 
-- Project review nästa vecka 
-- mvp enda krav 
+We are planning to add options to just search for cities without pinning them and then display that on the second page (so you search on the first that takes you to the second and here you can pin if you are logged in), where the meme also will be shown depending on the weather. We will obviously also add styling to the website. As of now, you cannot logout, nor delete your pinned cities haha, but that will be added soon as well of course.
 
+P.S 
+As of now, you cannot refresh the page while on pinned cities (don't know why yet.). Cant handle non existing city names. Plan to fix this.
 
-## TODO: 
+### File Structure Overview
 
-- [x] Connect the API
-- [x] Deploy to firebase
-- [x] Google login 
-- [x] State management (users pinned cities)
-- [ ] Finish model
+Our React web application adopts a modular and organized file structure, utilizing the Model-View-Presenter (MVP) pattern. Here's a breakdown of the key directories and files:
 
-- [ ] Make components (in views)
-    - [ ] SearchCard 
-    - [ ] WeatherCard 
-- [ ] Make views
-    - [ ] CityWeatherView.jsx
-    - [ ] HomeView.jsx 
-- [ ] Make presenters
-    - [ ] CityWeatherPresenter.jsx
-    - [ ] HomePresenter.jsx
-- [ ] Make css 
+- **`/public`**: This directory hosts static files. Key files include:
+  - `index.html`: The entry point HTML file for the app.
+  - `favicon.ico`: Placeholder for a favicon (to be added).
 
+- **`/src`**: The core application code resides here, structured into several subdirectories:
+  - **`/api`**: Contains functions for API interactions, handling various API calls.
+  - **`/model`**: Defines a Firebase model, encapsulating functions for Firebase interactions and authentication processes.
+  - **`/presenters`**: Holds the presenter components, which mediate between the model layer, the weather API functions and the views.
+  - **`/views`**: Comprises the view components, responsible for rendering the application's UI.
 
-### D Level Grading Criteria
+- **Root Files in `/src`**: These are crucial files located directly within the `src` folder, not part of any subfolders:
+  - `app.jsx`: The main React component.
+  - `index.jsx`: The JavaScript entry point.
+  - `style.css`: Central CSS stylesheet for the app.
+  - `store.js`: Manages the app's global state.
+  - `userState.js`: Handles user-specific state and persistence.
 
-1. **Architecture/Code**
-   - Application state mixed with Persistence but separated from Presenters and Views.
-   - Views with multiple responsibilities/roles.
-   - One module per View.
-   - View-Presenter mix incidentally.
-
-2. **Usability/User Experience/Improve Usability**
-   - Somewhat clear target group, unclear benefits for the user.
-   - Moderately efficient task accomplishment.
-   - User feels somewhat in control.
-   - Satisfactory feedback on user actions and visibility of system status.
-   - Little user consultation at prototyping or formative evaluation stage.
-   - Some improvement based on usability feedback from users in the target group.
-
-3. **Web APIs and Persistence**
-   - Remote data used from a single source but not creating added value for users based on the data provided by the API.
-   - Clear system status shown when waiting for API requests and user can perform other actions while waiting for the response.
-   - Well-separated persisted data per authenticated user.
-
-4. **Group Cooperation**
-   - Good balance of work in the group (25% of code can be multi-author).
-   - Role separation in the group (per component or per concern: views, interaction model/application state…).
-   - Work amount and roles documented through individual self-reflections.
+This structure ensures a clean separation of concerns, facilitating easier maintenance and scalability of the application.
