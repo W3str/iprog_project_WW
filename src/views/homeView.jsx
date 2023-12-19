@@ -2,21 +2,16 @@ import React from 'react';
 
 
 function HomeView(props) {
-    const handleSignIn = () => {
-        props.handleSignIn()
-    }
-
-const navigateToPinCity = () => {
-    props.navigateToPinCity()
-}
-
     return (
         <div className="HomePresenter">
             <h1>Moist Map</h1>
             {props.isSignedIn ? (
-                <div>Welcome, user!</div>
+                <>
+                    <div>Welcome, user!</div>
+                    <button onClick={props.handleSignOut}>Sign Out</button>
+                </>
             ) : (
-                <button onClick={handleSignIn}>Sign In with Google</button>
+                <button onClick={props.handleSignIn}>Sign In with Google</button>
             )}
             <div className="searchResults">
                 {Object.entries(props.weatherData).map(function([city, data]) {
@@ -24,7 +19,14 @@ const navigateToPinCity = () => {
                         <p key={city}>{`${city}: ${data.main.temp}°C, ${data.weather[0].main}`}</p>
                     );
                 })}
-            <button onClick={navigateToPinCity}>Pin Cities</button>
+                <input
+                    type="text"
+                    value={props.searchTerm}
+                    onChange={(e) => props.setSearchTerm(e.target.value)}
+                    placeholder="Search for a city"
+                />
+                <button onClick={props.handleSearch}>Search</button>
+                {props.searchError && <p>{props.searchError}</p>}
             </div>
         </div>
     );

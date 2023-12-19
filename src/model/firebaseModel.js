@@ -1,6 +1,7 @@
 import app from '../firebaseConfig';
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, doc, setDoc, arrayUnion, updateDoc, getDoc } from 'firebase/firestore';
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from 'firebase/auth';
+
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
@@ -22,6 +23,11 @@ export async function signInWithGoogle() {
         userId: userCredential.user.uid,
         pinnedCities: docSnap.data()?.pinnedCities || []
     };
+}
+
+
+export async function signOutFromGoogle() {
+    await signOut(auth);
 }
 
 

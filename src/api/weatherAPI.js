@@ -19,11 +19,20 @@ export function coordsFromCity(city) {
 // Function to get weather data from city coordinates
 export function weatherFromCity(city) {
     return coordsFromCity(city)
-        .then(function(coords) {
+        .then(coords => {
             const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&units=metric&appid=${API_KEY}`;
-            return fetch(weatherUrl);
+            return fetch(weatherUrl)
+                .then(response => {
+                    console.log(`[weatherAPI] Fetching weather data for coordinates: ${coords.lat}, ${coords.lon}`);
+                    if (!response.ok) {
+                        console.error(`[weatherAPI] Failed to fetch weather data for coordinates: ${coords.lat}, ${coords.lon}`);
+                        throw new Error('Failed to fetch weather data');
+                    }
+                    return response.json();
+                });
         })
-        .then(function(response) {
-            return response.json();
+        .catch(error => {
+            console.error('Error fetching weather data: ', error);
+            throw new Error('City not found');
         });
 }

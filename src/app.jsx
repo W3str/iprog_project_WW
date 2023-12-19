@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePresenter from './presenters/homePresenter';
-import AddCityPresenter from './presenters/addCitiesPresenter';
+import CityWeatherPresenter from './presenters/cityWeatherPresenter';
 
 function App() {
     return (
@@ -14,7 +14,7 @@ function App() {
                     <div className="App">
                         <Routes>
                             <Route path="/" element={<HomePresenter />} />
-                            <Route path="/addCities" element={<AddCityPresenter />} />
+                            <Route path="/cityWeather" element={<CityWeatherPresenter />} />
 
                         </Routes>
                     </div>
