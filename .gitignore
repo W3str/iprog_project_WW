@@ -135,3 +135,4 @@ src/apiConfig.js
 src/firebaseConfig.js
 .firebase
 build/static
+.DS_Store

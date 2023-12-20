@@ -5,25 +5,25 @@ import { persistReducer, persistStore } from 'redux-persist';
 import userReducer from './userState';
 
 const persistConfig = {
-  key: 'root',
-  storage,
+    key: 'root',
+    storage,
 };
 
 const rootReducer = combineReducers({
-  user: userReducer,
+    user: userReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: persistedReducer,
-  middleware: function(getDefaultMiddleware) {
-    return getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE', 'persist/REGISTER']
-      }
-    });
-  },
+    reducer: persistedReducer,
+    middleware: function(getDefaultMiddleware) {
+        return getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE',    'persist/REGISTER']
+            }
+        });
+    },
 });
 
 export const persistor = persistStore(store);

@@ -1,39 +1,25 @@
-# iprog_project_WW
+# Moist Map - A web development project in Interaction Programming and the Dynamic Web 
+<b>University</b>: KTH Royal Institute of Technology, Stockholm, Sweden <br>
+<b>Course code</b>: DH2642 <br>
 
+### Image...
+### Description...
 
-## Website: [Moist-Map](https://moist-map.web.app/)
+### How to run locally: 
+- `npm install` to install dependencies
+- `npm start` to start the server
 
+### Need to have:
+- API key from [OpenWeatherMap](https://openweathermap.org/api) --> put in apiConfig.js file in root 
+- 
 
-## Frågor till onsdag
-- Hur ska jag komplettera 
-
-
-### 
-- Need a specific target group (meme-ish) - novelty 
-- Google inlogg 
-- Deploy 
-- Project review nästa vecka 
-- mvp enda krav 
-
-
+### Website: [Moist-Map](https://moist-map.web.app/)
 ## TODO: 
 
-- [x] Connect the API
-- [x] Deploy to firebase
-- [x] Google login 
-- [x] State management (users pinned cities)
-- [ ] Finish model
-
-- [ ] Make components (in views)
-    - [ ] SearchCard 
-    - [ ] WeatherCard 
-- [ ] Make views
-    - [ ] CityWeatherView.jsx
-    - [ ] HomeView.jsx 
-- [ ] Make presenters
-    - [ ] CityWeatherPresenter.jsx
-    - [ ] HomePresenter.jsx
-- [ ] Make css 
+- [ ] Add system status for when waiting for API request 
+- [ ] Fix refresh on 2nd view 
+- [ ] Improve styling 
+- [ ] Memes / quotes 
 
 
 ### D Level Grading Criteria
