@@ -5,10 +5,10 @@ function HomeView(props) {
             {props.isSignedIn ? (
                 <>
                     <div>Welcome, user!</div>
-                    <button onClick={props.handleSignOut}>Sign Out</button>
+                    <button onClick={props.handleSignOut} className="sign-button">Sign Out</button>
                 </>
             ) : (
-                <button onClick={props.handleSignIn}>Sign In with Google</button>
+                <button onClick={props.handleSignIn} className="sign-button">Sign In with Google</button>
             )}
             <div className="searchResults">
                 {props.weatherData && Object.keys(props.weatherData).length > 0 ? (

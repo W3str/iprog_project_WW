@@ -5,6 +5,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePresenter from './presenters/homePresenter';
 import CityWeatherPresenter from './presenters/cityWeatherPresenter';
+import './style.css';
 
 function App() {
     return (
