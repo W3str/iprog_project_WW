@@ -1,0 +1,16 @@
+.searchResults {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .searchResults > div {
+    flex: 1 1 auto;
+    margin-bottom: 10px;
+  }
+  
+  .searchResults > div > button {
+    margin-left: 10px;
+  }

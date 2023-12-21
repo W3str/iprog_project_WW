@@ -13,12 +13,13 @@ function HomeView(props) {
             <div className="searchResults">
                 {props.weatherData && Object.keys(props.weatherData).length > 0 ? (
                     Object.entries(props.weatherData).map(([city, data]) => (
-                        <div key={city}>
-                            <p>{`${city}: ${data.main.temp}°C, ${data.weather[0].main}`}</p>
+                        <div key={city} className="city-item">
                             {props.isSignedIn && (
                                 <button onClick={() => props.onUnpinCity(city)}>X</button>
                             )}
+                            <span>{`${city}: ${data.main.temp}°C, ${data.weather[0].main}`}</span>
                         </div>
+
                     ))
                 ) : props.isSignedIn ? (
                     <p>This is your home. Start by adding cities you are interested in!</p>
