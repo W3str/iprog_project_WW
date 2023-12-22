@@ -1,6 +1,6 @@
 function HomeView(props) {
     const weatherQuotes = {
-        "Clear Sky": "The day is as clear as your conscience.",
+        "Clear": "The day is as clear as your conscience.",
         "Clouds": "Just a few clouds, adding character to the sky.",
         "Scattered Clouds": "The sky is thinking, pondering with scattered clouds.",
         "Broken Clouds": "Not quite clear, not quite stormy, the sky's in a mood.",
