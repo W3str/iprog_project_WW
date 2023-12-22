@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 function HomePresenter() {
     const [weatherData, setWeatherData] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -84,21 +85,29 @@ function HomePresenter() {
         }
 
         // Fetch weather data only for pinned cities if the user is signed in
+        setIsLoading(true); // Start loading before fetching data
+        console.log('[HomePresenter] Fetching weather data for pinned cities... Loading state set to true');
+
+        // Your original data fetching logic
         if (isSignedIn) {
             if (pinnedCities.length > 0) {
                 Promise.all(pinnedCities.map(weatherFromCity))
                     .then(data => handleWeatherData(data, pinnedCities))
-                    .catch(handleError);
+                    .catch(handleError)
+                    .finally(() => setIsLoading(false)); // Stop loading after fetching or on error
             } else {
                 setWeatherData({});
+                setIsLoading(false); // Stop loading if no pinned cities
             }
         } else {
             const defaultCities = ['London', 'Stockholm', 'Beirut'];
             Promise.all(defaultCities.map(weatherFromCity))
                 .then(data => handleWeatherData(data, defaultCities))
-                .catch(handleError);
+                .catch(handleError)
+                .finally(() => setIsLoading(false)); // Stop loading after fetching or on error
+        console.log('[HomePresenter] Fetching weather data for default cities... Loading state set to false');
         }
-    }, [isSignedIn, pinnedCities]);
+        }, [isSignedIn, pinnedCities]);
 
     return (
         <HomeView
@@ -112,6 +121,7 @@ function HomePresenter() {
             handleSearch={handleSearch}
             searchError={searchError}
             onUnpinCity={handleUnpinCity}
+            isLoading={isLoading}
         />
     );
 }

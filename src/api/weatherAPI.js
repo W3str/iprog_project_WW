@@ -9,7 +9,11 @@ export function coordsFromCity(city) {
         })
         .then(function(data) {
             if (data && data.length > 0) {
-                return { lat: data[0].lat, lon: data[0].lon };
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        resolve({ lat: data[0].lat, lon: data[0].lon });
+                    }, 3000);
+                });
             } else {
                 throw new Error('No data found for the specified city');
             }

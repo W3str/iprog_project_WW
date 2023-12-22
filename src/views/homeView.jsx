@@ -10,6 +10,8 @@ function HomeView(props) {
             ) : (
                 <button onClick={props.handleSignIn} className="sign-button">Sign In with Google</button>
             )}
+            {props.isLoading ? (<img src="https://brfenergi.se/iprog/loading.gif" alt="Loading" />) : 
+
             <div className="searchResults">
                 {props.weatherData && Object.keys(props.weatherData).length > 0 ? (
                     Object.entries(props.weatherData).map(([city, data]) => (
@@ -32,7 +34,7 @@ function HomeView(props) {
                 />
                 <button onClick={props.handleSearch}>Search</button>
                 {props.searchError && <p>{props.searchError}</p>}
-            </div>
+            </div>}
         </div>
     );
 }
