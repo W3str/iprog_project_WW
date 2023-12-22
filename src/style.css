@@ -61,16 +61,13 @@ body {
     margin: 10px 0;
     border: none;
     border-radius: 4px;
-    width: calc(100% - 22px); /* Input field width - padding */
+    width: calc(100% - 22px);
     box-sizing: border-box;
   }
   
-  /* Add this class to the sign-in and sign-out buttons if they don't have it already */
   .sign-button {
     display: block;
     width: 100%;
     margin-top: 10px;
   }
-  
-  /* If you have additional specific styles for the sign-out button, add a class to it and target here */
   
