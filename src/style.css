@@ -41,6 +41,31 @@ body {
   .searchResults > div > span {
     font-weight: 500;
   }
+
+  .city-item {
+    background: #e9e9e9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    }
+
+    .city-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .city-info > button {
+        margin-right: 10px; /* Space between the "X" button and the city info */
+    }
+
+    .weather-condition {
+        margin-top: 8px; /* Space between the city info and the weather condition */
+        width: 100%; /* Full width */
+    }
   
   button {
     background-color: #5D647B;
@@ -64,7 +89,7 @@ body {
     width: calc(100% - 22px);
     box-sizing: border-box;
   }
-  
+
   .sign-button {
     display: block;
     width: 100%;
