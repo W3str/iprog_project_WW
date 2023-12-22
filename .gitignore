@@ -136,3 +136,4 @@ src/firebaseConfig.js
 .firebase
 build/static
 .DS_Store
+src/.DS_Store

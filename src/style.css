@@ -59,12 +59,12 @@ body {
     }
 
     .city-info > button {
-        margin-right: 10px; /* Space between the "X" button and the city info */
+        margin-right: 10px; 
     }
 
     .weather-condition {
-        margin-top: 8px; /* Space between the city info and the weather condition */
-        width: 100%; /* Full width */
+        margin-top: 8px; 
+        width: 100%; 
     }
   
   button {
@@ -84,9 +84,9 @@ body {
   input[type="text"] {
     padding: 10px;
     margin: 10px 0;
-    border: none;
     border-radius: 4px;
-    width: calc(100% - 22px);
+    border: 1px solid #ccc;
+    width: 100%;
     box-sizing: border-box;
   }
 
@@ -96,3 +96,14 @@ body {
     margin-top: 10px;
   }
   
+.button2 {
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}

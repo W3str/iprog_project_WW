@@ -8,12 +8,12 @@ function CityWeatherView({ city, weatherData, onAddCity, isSignedIn, navigateToH
 		<div className="searchResults"><p>{weatherData.main.temp}°C, {weatherData.weather[0].main}</p></div>
 		{isSignedIn && (
 			<>
-			<button onClick={() => onAddCity(city)}>Pin this city to home view</button>
-			{pinError && <p>{pinError}</p>}
+			<button className="button2" onClick={() => onAddCity(city)}>Pin this city to home view</button>
+			{pinError && <div className='error'><p>{pinError}</p></div>}
 			</>
 		)}
-		<button onClick={navigateToHome}>Go back to home</button>
-		</div>
+		<button className="button2" onClick={navigateToHome}>Go back to home</button>
+        </div>
 	);
 	}
 

@@ -16,7 +16,7 @@ function HomeView(props) {
             <h1>Moist Map</h1>
             {props.isSignedIn ? (
                 <>
-                    <div>Welcome, user!</div>
+                    <div>Welcome, sunshine!</div>
                     <button onClick={props.handleSignOut} className="sign-button">Sign Out</button>
                 </>
             ) : (
@@ -48,7 +48,7 @@ function HomeView(props) {
                     placeholder="Search for a city"
                 />
                 <button onClick={props.handleSearch}>Search</button>
-                {props.searchError && <p>{props.searchError}</p>}
+                {props.searchError && <p className='error'>{props.searchError}</p>}
             </div>}
         </div>
     );
